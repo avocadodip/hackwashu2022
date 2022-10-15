@@ -4,7 +4,7 @@
 	import { fade } from 'svelte/transition';
 	import { db } from '../../lib/firebase';
 	import { collection, setDoc, doc } from 'firebase/firestore';
-  import { goto } from '$app/navigation';
+	import { goto } from '$app/navigation';
 
 	let email = '',
 		password = '',
@@ -19,29 +19,29 @@
 
 	// Sign in function
 	const signup = async () => {
-    // Error if email field blank
+		// Error if email field blank
 		if (email == '') {
-      credentialError = true;
+			credentialError = true;
 			errorMessage = 'Please enter an email';
 			return;
 		}
-    // Error if password field blank
+		// Error if password field blank
 		if (password == '') {
-      credentialError = true;
+			credentialError = true;
 			errorMessage = 'Please enter a password';
 			return;
 		}
-    // Error if name field blank
+		// Error if name field blank
 		if (firstName == '') {
-      credentialError = true;
+			credentialError = true;
 			errorMessage = 'Please enter your first name';
 			return;
 		}
-    // Create Firebase user and updates collection 
+		// Create Firebase user and updates collection
 		try {
 			const userRecord = await createUserWithEmailAndPassword(auth, email, password);
 			await setDoc(doc(db, 'users', userRecord.user.uid), {
-				email: userRecord.user.email,
+				email: userRecord.user.email
 			});
 
 			// Sets their first name
@@ -49,14 +49,13 @@
 
 			// Create settings doc
 			await setDoc(collection(db, 'users', auth.currentUser.uid, 'settings', 'settingsDoc'), {
-          dayStart: "7:00",
-          dayEnd: "9:00",
-        });
+				dayStart: '7:00',
+				dayEnd: '9:00'
+			});
 
 			goto('/');
-		} 
-    // Shows error message if sign-in credentials are invalid
-    catch (err) {
+		} catch (err) {
+			// Shows error message if sign-in credentials are invalid
 			if (err.message == 'Firebase: Error (auth/invalid-email).') {
 				credentialError = true;
 				errorMessage = 'Invalid email';
@@ -95,66 +94,66 @@
 	}
 </script>
 
-<section class="flex justify-center items-center h-screen  w-screen">
+<section class="flex justify-center items-center h-screen  w-screen bg-bridge-bg">
 	<div class="flex flex-col items-start w-[350px]">
 		<!-- BACK ARROW -->
 		<a alt="back" href="/login" class="text-white"> ⬅ Back </a>
-    
+
 		<h2 class="text-white text-2xl font-bold mt-7">Create your account</h2>
-    
+
 		<!-- NAME FIELD -->
 		<div class="mt-10 col-3 input-effect text-black text-[Epilogue]">
-      <input
+			<input
 				class="effect-20 "
 				type="text"
 				bind:value={firstName}
 				class:has-content={nameFieldHasContent}
 				placeholder=""
-        />
-        <label for="first name">First Name</label>
-        <span class="focus-border">
-          <i />
-        </span>
-      </div>
+			/>
+			<label for="first name">First Name</label>
+			<span class="focus-border">
+				<i />
+			</span>
+		</div>
 
 		<!-- EMAIL FIELD -->
 		<div class="mt-8 col-3 input-effect text-black text-[Epilogue]">
-      <input
+			<input
 				class="effect-20 "
 				type="text"
 				bind:value={email}
 				class:has-content={emailFieldHasContent}
 				placeholder=""
-        />
-        <label for="email">Email</label>
-        <span class="focus-border">
-          <i />
-        </span>
-      </div>
-      
-    <!-- PASSWORD FIELD -->
+			/>
+			<label for="email">Email</label>
+			<span class="focus-border">
+				<i />
+			</span>
+		</div>
+
+		<!-- PASSWORD FIELD -->
 		<div class="mt-8 col-3 input-effect text-black text-[Epilogue]">
-      <input
+			<input
 				class="effect-20 "
 				type="password"
 				bind:value={password}
 				class:has-content={passFieldHasContent}
 				placeholder=""
-        />
-        <label for="password">Password</label>
-        <span class="focus-border">
-          <i />
-        </span>
-      </div>
-      
-    <!-- REACTIVE ERROR MESSAGE -->
-    {#if credentialError}
-    <p in:fade class="text-[#ffffff] text-sm mt-4">*{errorMessage}</p>
+			/>
+			<label for="password">Password</label>
+			<span class="focus-border">
+				<i />
+			</span>
+		</div>
+
+		<!-- REACTIVE ERROR MESSAGE -->
+		{#if credentialError}
+			<p in:fade class="text-[#ffffff] text-sm mt-4">*{errorMessage}</p>
 		{/if}
-    
-    <!-- CONTINUE BUTTON -->
+
+		<!-- CONTINUE BUTTON -->
 		<button
-			class="bg-white hover:bg-[#ffe2e2] text-[#DD4F4F] font-bold rounded-3xl mt-7 py-2 w-[90%]"
+			class="bg-white hover:bg-[#fff1d3] text-bridge-bg font-bold rounded-3xl mt-7 py-2 w-[90%]"
 			on:click={signup}>Continue</button
 		>
 	</div>

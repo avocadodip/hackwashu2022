@@ -61,7 +61,7 @@
 </script>
 
 <section class="flex flex-col items-center">
-	<h2 class="text-black text-3xl font-bold mt-4 mb-6">Sign in to UrMom</h2>
+	<h2 class="text-black text-3xl font-bold mt-4 mb-6">Sign in to Civil</h2>
 
 	<!-- Inputs are same, only have different labels -->
 	<div class="col-3 input-effect text-black text-[Epilogue]">
@@ -94,17 +94,17 @@
 	</div>
 
 	<button
-		class="bg-[#dd4f4f] hover:bg-[#e86565] text-white font-bold rounded-3xl mt-5 py-2 w-[70%]"
+		class="bg-bridge-bg hover:bg-bridge-sidebar text-white font-bold rounded-3xl mt-5 py-2 w-[70%]"
 		on:click={login}>Continue</button
 	>
 
 	{#if credentialError}
-		<p in:fade class="text-[#e86565] text-sm mt-2">*{errorMessage}</p>
+		<p in:fade class="text-bridge-bg text-sm mt-2">*{errorMessage}</p>
 	{/if}
 
 	<p class="text-[#9a9a9a] mt-5">
-		Don't have an account? <span class="text-[#dd4f4f] cursor-pointer"
-			><a alt="signup" href="/signup">Sign up</a></span
+		Don't have an account? <span class="text-bridge-sidebar cursor-pointer"
+			><a alt="signup" href="/register">Sign up</a></span
 		>
 	</p>
 </section>
@@ -145,7 +145,7 @@
 		left: 0;
 		width: 0;
 		height: 2px;
-		background-color: #dd4f4f;
+		background-color: var(--bridge-bg);
 		transition: 0.3s;
 	}
 	.effect-20 ~ .focus-border:after {
@@ -162,7 +162,7 @@
 		left: 0;
 		width: 2px;
 		height: 0;
-		background-color: #dd4f4f;
+		background-color: var(--bridge-bg);
 		transition: 0.4s;
 	}
 	.effect-20 ~ .focus-border i:after {
@@ -200,7 +200,7 @@
 		top: -18px;
 		left: 0;
 		font-size: 12px;
-		color: #dd4f4f;
+		color: var(--bridge-bg);
 		transition: 0.3s;
 	}
 </style>

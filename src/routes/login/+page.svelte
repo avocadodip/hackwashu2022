@@ -33,7 +33,7 @@
 	{#if userIsAuthenticated}
 		{goto('/')}
 	{:else}
-		<div class="flex justify-center items-center h-screen w-screen">
+		<div class="flex justify-center items-center h-screen w-screen bg-bridge-bg">
       <div class="flex-col">
         <!-- SIGN UP WITH EMAIL -->
 				<a alt="signup" href="/register">
@@ -53,7 +53,7 @@
 				<div class="mt-12">
 					<h1 class="mb-3">Already have an account?</h1>
 					<button
-						class="bg-transparent border-2 border-white hover:bg-[#e86565] text-white font-bold rounded-3xl px-5 py-3 w-64"
+						class="bg-transparent border-2 border-white hover:bg-bridge-sidebar text-white font-bold rounded-3xl px-5 py-3 w-64"
 						on:click={toggleModal}
 					>
 						Sign in
@@ -92,7 +92,7 @@
 	}
 
 	.line-thru-bg {
-		background: #dd4f4f;
+		background: var(--bridge-bg);
 		padding: 0 8px;
 	}
 </style>

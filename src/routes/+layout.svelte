@@ -28,7 +28,7 @@
 		<slot />
 	</main>
 {:else}
-	<main class="flex h-screen overflow-hidden">
+	<main class="flex h-screen overflow-hidden bg-bridge-bg">
 		<div class="w-[40%]">
 			<Sidebar />
 		</div>

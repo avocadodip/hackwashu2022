@@ -4,8 +4,8 @@
 
 </script>
 
-<body>
-	<div class="bg-bridge-sidebar h-36 p-5 m-6 rounded-md shadow-lg w-[680px]">
+<body class="bg-bridge-bg">
+	<div class="bg-bridge-sidebar h-36 p-5 mt-12 ml-8 rounded-lg w-[500px]">
 		<textarea rows="1" class="w-full h-full" placeholder="New post..." />
 	</div>
 </body>
