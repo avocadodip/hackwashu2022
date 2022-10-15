@@ -29,7 +29,7 @@
 
 </script>
 
-<main class="bg-bridge-bg ml-8">
+<main class="bg-bridge-bg ml-10 mb-20">
 	<div class="bg-bridge-sidebar h-36 p-5 mt-12 rounded-lg w-[500px] flex flex-col justify-between">
 		<div class="flex gap-3">
 			<div class="relative w-10 h-10">
@@ -249,4 +249,6 @@
 		background: var(--bridge-bg);
 		padding: 0 8px;
 	}
+
+
 </style>

@@ -28,12 +28,34 @@
 		<slot />
 	</main>
 {:else}
-	<main class="flex h-screen overflow-hidden bg-bridge-bg">
-		<div class="w-[40%]">
+	<main class="flex overflow-hidden bg-bridge-bg">
+		<div class="sidebar w-[40%] h-screen">
 			<Sidebar />
 		</div>
-		<div class="w-[60%]">
+		<div class="w-[60%] overflow-y-scroll h-screen">
 			<slot />
 		</div>
 	</main>
 {/if}
+
+<style>
+		/* ------ scrolling ------ */
+		::-webkit-scrollbar {
+		width: 17px;
+	}
+
+	/* Background */
+	::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		background: var(--bridge-brown);
+		border-radius: 8px;
+		background-clip: padding-box;
+		padding: 0 4px;
+		border-right: 5px solid transparent;
+		border-left: 5px solid transparent;
+	}
+</style>
