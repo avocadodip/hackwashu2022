@@ -33,8 +33,11 @@
 	{#if userIsAuthenticated}
 		{goto('/')}
 	{:else}
-		<div class="flex justify-center items-center h-screen w-screen bg-bridge-bg">
-      <div class="flex-col">
+	
+	<div class="flex flex-col justify-center items-center h-screen w-screen bg-bridge-bg">
+		<img class="w-96 ml-10" src="CIVIL.png" alt="logo"/>
+		<p class="mb-14">The hub for productive dialogue.</p>
+		<div class="flex-col">
         <!-- SIGN UP WITH EMAIL -->
 				<a alt="signup" href="/register">
 					<button

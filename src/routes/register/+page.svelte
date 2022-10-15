@@ -179,7 +179,7 @@
 	}
 
 	.effect-20 {
-		border: 1px solid #ccc;
+		border: 1px solid white;
 		/* top right bottom left */
 		padding: 7px 2px 7px 10px;
 		transition: 0.4s;
@@ -239,7 +239,7 @@
 		left: 14px;
 		width: 100%;
 		top: 10px;
-		color: rgb(230, 230, 230);
+		color: rgb(255, 255, 255);
 		transition: 0.3s;
 		z-index: -1;
 		letter-spacing: 0.5px;
