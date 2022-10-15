@@ -138,6 +138,8 @@
       <!-- svelte-ignore a11y-click-events-have-key-events -->
       <p class="cursor-pointer text-xs font-semibold mt-3 opacity-70" on:click={logout}>Log out</p>
     </div>
+
+    
   </div>
 
 </main>

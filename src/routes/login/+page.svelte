@@ -29,7 +29,7 @@
 	<LoginForm />
 </Modal>
 
-<section>
+<section class="flex flex-col justify-between">
 	{#if userIsAuthenticated}
 		{goto('/')}
 	{:else}
@@ -65,6 +65,10 @@
 			</div>
 		</div>
 	{/if}
+
+	<div class="bg-bridge-bg flex justify-center text-xs pb-3">
+		Made with lotsa ❤️ by Chris, Ant, & Geoff @ Hack Washu 2022
+	</div>
 </section>
 
 <style>
