@@ -95,7 +95,7 @@
 	}
 </script>
 
-<section class="flex justify-center items-center h-screen">
+<section class="flex justify-center items-center h-screen  w-screen">
 	<div class="flex flex-col items-start w-[350px]">
 		<!-- BACK ARROW -->
 		<a alt="back" href="/login" class="text-white"> ⬅ Back </a>

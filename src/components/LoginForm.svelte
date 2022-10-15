@@ -61,7 +61,7 @@
 </script>
 
 <section class="flex flex-col items-center">
-	<h2 class="text-black text-3xl font-bold mt-4 mb-6">Sign in to Fervo</h2>
+	<h2 class="text-black text-3xl font-bold mt-4 mb-6">Sign in to UrMom</h2>
 
 	<!-- Inputs are same, only have different labels -->
 	<div class="col-3 input-effect text-black text-[Epilogue]">

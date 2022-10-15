@@ -33,7 +33,7 @@
 	{#if userIsAuthenticated}
 		{goto('/')}
 	{:else}
-		<div class="flex justify-center items-center h-screen">
+		<div class="flex justify-center items-center h-screen w-screen">
       <div class="flex-col">
         <!-- SIGN UP WITH EMAIL -->
 				<a alt="signup" href="/register">
