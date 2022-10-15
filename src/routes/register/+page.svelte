@@ -48,7 +48,7 @@
 			await updateProfile(userRecord.user, { displayName: firstName });
 
 			// Create settings doc
-			await setDoc(collection(db, 'users', auth.currentUser.uid, 'settings', 'settingsDoc'), {
+			await setDoc(collection(db, 'users', auth.currentUser.uid, 'data', 'dataDoc'), {
 				dayStart: '7:00',
 				dayEnd: '9:00'
 			});
