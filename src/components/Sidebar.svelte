@@ -60,8 +60,8 @@
   <!-- HOME -->
   <section class="flex flex-col gap-5">
     {#if activeTab == '/'}
-        <div class="flex justify-center active py-4 rounded-3xl cursor-pointer" >
-          <div class="flex items-center gap-5 ">
+        <div class="flex justify-center active rounded-3xl cursor-pointer" >
+          <div class="flex items-center gap-5 py-3">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-8 h-8">
               <path fill-rule="evenodd" d="M9.293 2.293a1 1 0 011.414 0l7 7A1 1 0 0117 11h-1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-3a1 1 0 00-1-1H9a1 1 0 00-1 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-6H3a1 1 0 01-.707-1.707l7-7z" clip-rule="evenodd" />
             </svg>
@@ -72,7 +72,7 @@
         </div>
     {:else}
       <a href="/" tabindex="-1">
-        <div class="flex justify-center hover:bg-[#0000000b] py-4 rounded-3xl cursor-pointer" >
+        <div class="flex justify-center hover:bg-[#0000000b] py-3 rounded-3xl cursor-pointer" >
           <div class="flex items-center gap-5 ">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor" class="w-8 h-8">
               <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
@@ -87,7 +87,7 @@
 
     <!-- POPULAR -->
       {#if activeTab == '/popular'}
-          <div class="flex justify-center active py-4 rounded-3xl cursor-pointer" >
+          <div class="flex justify-center active py-3 rounded-3xl cursor-pointer" >
             <div class="flex items-center gap-5 ">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
                 <path fill-rule="evenodd" d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z" clip-rule="evenodd" />
@@ -99,7 +99,7 @@
           </div>
       {:else}
         <a href="/popular" tabindex="-1">
-          <div class="flex justify-center hover:bg-[#0000000b] py-4 rounded-3xl cursor-pointer" >
+          <div class="flex justify-center hover:bg-[#0000000b] py-3 rounded-3xl cursor-pointer" >
             <div class="flex items-center gap-5 ">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor" class="w-8 h-8">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
@@ -115,15 +115,29 @@
       {/if}
   </section>
 
-  <div>
-    <div class="relative w-12 h-12">
-      <img class="rounded-full border border-bridge-sidebar shadow-sm" src={photoURL} alt="profile pic" />
+  <div class="">
+    <div class="flex items-center gap-4 bg-[#00000012] px-3 py-2 rounded-[50px]">
+      <div class="relative w-12 h-12">
+        <img class="rounded-full border border-bridge-sidebar shadow-sm" src={photoURL} alt="profile pic" />
+      </div>
+      <div class="flex flex-col">
+        <p class="text-md font-medium">
+          {name}
+        </p>
+        <div class="flex items-center gap-1">
+          <p class="text-sm">4.54</p>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3 mb-1">
+            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+          </svg>
+          
+        </div>
+      </div>
     </div>
-    <p>
-      {name}
-    </p>
-
-    <p class="cursor-pointer" on:click={logout}>Logout</p>
+    
+    <div class="flex justify-center">
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <p class="cursor-pointer text-xs font-semibold mt-3 opacity-70" on:click={logout}>Log out</p>
+    </div>
   </div>
 
 </main>
