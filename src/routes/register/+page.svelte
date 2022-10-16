@@ -100,9 +100,10 @@
 		<a alt="back" href="/login" class="text-white"> ⬅ Back </a>
 
 		<h2 class="text-white text-2xl font-bold mt-7">Create your account</h2>
+		<p class="text-white text-sm font-md mt-2">still in develoment 🔨 (psst use google login instead)</p>
 
 		<!-- NAME FIELD -->
-		<div class="mt-10 col-3 input-effect text-white text-[Epilogue]">
+		<div class="mt-6 col-3 input-effect text-white text-[Epilogue]">
 			<input
 				class="effect-20 "
 				type="text"
