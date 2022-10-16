@@ -35,9 +35,9 @@
 	{:else}
 	
 	<div class="flex flex-col justify-center items-center h-screen w-screen bg-bridge-bg">
-		<img class="w-96 ml-10" src="CIVIL.png" alt="logo"/>
-		<p class="mb-14">The hub for productive dialogue.</p>
-		<div class="flex-col">
+		<img class="w-96 ml-10 fadeInUpAnimate fadeInUp" src="CIVIL.png" alt="logo"/>
+		<p class="mb-14 fadeInAnimate fadeInDelay fadeIn">The hub for productive dialogue.</p>
+		<div class="flex-col fadeInAnimate fadeInDelayTwo fadeIn">
         <!-- SIGN UP WITH EMAIL -->
 				<a alt="signup" href="/register">
 					<button
@@ -101,5 +101,107 @@
 	.line-thru-bg {
 		background: var(--bridge-bg);
 		padding: 0 8px;
+	}
+
+	.animation {
+		animation: breathing 5s linear infinite;
+		transition: 0.5s ease-in-out;
+	}
+
+	@keyframes breathing {
+		0% {
+			transform: translateY(10px);
+		}
+		50% {
+			transform: translateY(-10px);
+		}
+		100% {
+			transform: translateY(10px);
+		}
+	}
+
+	.fadeInUpAnimate {
+		-webkit-animation-duration: 1.5s;
+		animation-duration: 1.5s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+	}
+
+	.fadeInAnimate {
+		-webkit-animation-duration: 4s;
+		animation-duration: 4s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+	}
+
+	.fadeInUp {
+		-webkit-animation-delay: 0.5s;
+		-moz-animation-delay: 0.5s;
+		animation-delay: 0.5s;
+	}
+	.fadeInDelay {
+		-webkit-animation-delay: 1.1s;
+		-moz-animation-delay: 1.1s;
+		animation-delay: 1.1s;
+	}
+	.fadeInDelayTwo {
+		-webkit-animation-delay: 1.8s;
+		-moz-animation-delay: 1.8s;
+		animation-delay: 1.8s;
+	}
+
+	@-webkit-keyframes fadeInUp {
+		from {
+			opacity: 0;
+			-webkit-transform: translate3d(0, 25%, 0);
+			transform: translate3d(0, 25%, 0);
+		}
+		to {
+			opacity: 1;
+			-webkit-transform: none;
+			transform: none;
+		}
+	}
+
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			-webkit-transform: translate3d(0, 25%, 0);
+			transform: translate3d(0, 25%, 0);
+		}
+
+		to {
+			opacity: 1;
+			-webkit-transform: none;
+			transform: none;
+		}
+	}
+
+	.fadeInUp {
+		-webkit-animation-name: fadeInUp;
+		animation-name: fadeInUp;
+	}
+
+	@-webkit-keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+	.fadeIn {
+		-webkit-animation-name: fadeIn;
+		animation-name: fadeIn;
 	}
 </style>

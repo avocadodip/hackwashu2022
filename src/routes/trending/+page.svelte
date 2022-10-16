@@ -1,9 +1,10 @@
 <script>
+  import FeedPost from '../../components/FeedPost.svelte';
 
   let textbox;
   let text;
 </script>
-<main class="ml-10 mb-20 mt-12">
+<main class="ml-12 mb-20 mt-12" >
   <div class="form w-[500px]">
     <div class="form__textbox">
       <span class="form__submit-button">
@@ -21,12 +22,31 @@
       />
     </div>
   </div>
+  <div class="flex gap-3 mt-4">
+    <div class="bg-bridge-sidebar px-3 py-2 rounded-xl cursor-pointer hover:opacity-80">
+      <p class="text-sm font-medium">
+        WILD canceled
+      </p>
+    </div>
+    <div class="bg-bridge-sidebar px-3 py-2 rounded-xl cursor-pointer hover:opacity-80">
+      <p class="text-sm font-medium">
+        Designer babies
+      </p>
+    </div>
+    <div class="bg-bridge-sidebar px-3 py-2 rounded-xl cursor-pointer hover:opacity-80">
+      <p class="text-sm font-medium">
+        Super Mario Movie boycott
+      </p>
+    </div>
+  </div>
+	<FeedPost rating={4.9} profilePic={'avatar2.jpg'} likeCount={5} respectCount={6} commentCount={4}/>
+	<FeedPost rating={4.9} profilePic={'avatar3.jpg'} likeCount={67} respectCount={64} commentCount={4}/>
+	<FeedPost rating={4.8} profilePic={'avatar4.jpg'} likeCount={25} respectCount={41} commentCount={4}/>
 </main>
 
 
 <style>
   .form {
-    padding-left: 10px;
 
   }
 

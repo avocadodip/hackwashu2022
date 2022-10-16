@@ -28,6 +28,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"firebase": "^9.12.1"
+		"firebase": "^9.12.1",
+		"googleapis": "^108.0.0",
+		"react-scripts": "^5.0.1"
 	}
 }

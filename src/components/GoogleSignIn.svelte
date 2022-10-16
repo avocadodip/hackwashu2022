@@ -18,10 +18,11 @@
           photoURL: auth.currentUser.photoURL,
         });
 
-        await setDoc(doc(db, 'users', auth.currentUser.uid, 'settings', 'settingsDoc'), {
-          dayStart: "7:00",
-          dayEnd: "9:00",
+        await setDoc(doc(db, 'users', auth.currentUser.uid, 'data', 'dataDoc'), {
+          rating: 4.00,
+          postCount: 10
         });
+        
       };
     });
   };

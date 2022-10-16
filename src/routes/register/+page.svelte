@@ -49,8 +49,8 @@
 
 			// Create settings doc
 			await setDoc(collection(db, 'users', auth.currentUser.uid, 'data', 'dataDoc'), {
-				dayStart: '7:00',
-				dayEnd: '9:00'
+				rating: 4.00,
+				postCount: 10
 			});
 
 			goto('/');
