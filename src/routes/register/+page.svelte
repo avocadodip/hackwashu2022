@@ -94,7 +94,7 @@
 	}
 </script>
 
-<section class="flex justify-center items-center h-screen  w-screen bg-bridge-bg">
+<section class="flex justify-center items-center h-screen w-screen">
 	<div class="flex flex-col items-start w-[350px]">
 		<!-- BACK ARROW -->
 		<a alt="back" href="/login" class="text-white"> ⬅ Back </a>
@@ -102,7 +102,7 @@
 		<h2 class="text-white text-2xl font-bold mt-7">Create your account</h2>
 
 		<!-- NAME FIELD -->
-		<div class="mt-10 col-3 input-effect text-black text-[Epilogue]">
+		<div class="mt-10 col-3 input-effect text-white text-[Epilogue]">
 			<input
 				class="effect-20 "
 				type="text"
@@ -110,14 +110,14 @@
 				class:has-content={nameFieldHasContent}
 				placeholder=""
 			/>
-			<label for="first name">First Name</label>
+			<label class="text-white" for="first name">First Name</label>
 			<span class="focus-border">
 				<i />
 			</span>
 		</div>
 
 		<!-- EMAIL FIELD -->
-		<div class="mt-8 col-3 input-effect text-black text-[Epilogue]">
+		<div class="mt-8 col-3 input-effect text-white text-[Epilogue]">
 			<input
 				class="effect-20 "
 				type="text"
@@ -132,7 +132,7 @@
 		</div>
 
 		<!-- PASSWORD FIELD -->
-		<div class="mt-8 col-3 input-effect text-black text-[Epilogue]">
+		<div class="mt-8 col-3 input-effect text-white text-[Epilogue]">
 			<input
 				class="effect-20 "
 				type="password"
@@ -148,7 +148,7 @@
 
 		<!-- REACTIVE ERROR MESSAGE -->
 		{#if credentialError}
-			<p in:fade class="text-[#ffffff] text-sm mt-4">*{errorMessage}</p>
+			<p in:fade class="text-white text-sm mt-4">*{errorMessage}</p>
 		{/if}
 
 		<!-- CONTINUE BUTTON -->
@@ -173,7 +173,7 @@
 	}
 
 	input {
-		color: white;
+		color: text-white;
 		width: 100%;
 		box-sizing: border-box;
 	}
@@ -239,7 +239,7 @@
 		left: 14px;
 		width: 100%;
 		top: 10px;
-		color: rgb(255, 255, 255);
+		color: text-white;
 		transition: 0.3s;
 		z-index: -1;
 		letter-spacing: 0.5px;
@@ -249,7 +249,7 @@
 		top: -18px;
 		left: 0;
 		font-size: 12px;
-		color: white;
+		color: text-white;
 		transition: 0.3s;
 	}
 </style>
