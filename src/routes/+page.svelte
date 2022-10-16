@@ -51,11 +51,10 @@
 	let postContent;
 
 	const handleSubmit = () => {
-		let text = 'blah';
 		// Pass String/rating/postCount into our algorithm
-		fetch(`/api/data?text=${text}`)
+		fetch(`/data?text=${postContent}`)
 			.then((res) => res.json())
-			.then((toxicityValues) => console.log(toxicityValue));
+			.then((toxicityValues) => console.log(toxicityValues));
 
 		// Retrieve new rating from algo and set it as user's rating
 
