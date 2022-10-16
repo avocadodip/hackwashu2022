@@ -5,14 +5,31 @@
 	import { db, auth } from '$lib/firebase';
 	import { formatNum } from '../lib/format';
 	import FeedPost from '../components/FeedPost.svelte';
-	// import { getPostRating } from '../lib/algo';
 	let name, email, photoURL, rating, postCount;
 	let feedPosts = [];
 	let postRatings = [
-		{ rating: 3.4, avatar: 'avatar4.jpg', likeCount: 5, respectCount: 2, commentCount: 2 },
+		{ rating: 4.0, avatar: 'avatar4.jpg', likeCount: 5, respectCount: 2, commentCount: 2 },
 		{ rating: 4.7, avatar: 'avatar3.jpg', likeCount: 430, respectCount: 321, commentCount: 94 },
 		{ rating: 4.2, avatar: 'avatar2.jpg', likeCount: 124, respectCount: 26, commentCount: 40 }
 	];
+
+	function findValues(object) {
+		const values = [];
+
+		for (const key in object) {
+			if (key === 'value') {
+				values.push(object[key]);
+			} else {
+				if (Array.isArray(object[key])) {
+					values.push(...object[key].map((elem) => findValues(elem)));
+				} else if (typeof object[key] === 'object') {
+					values.push(...findValues(object[key]));
+				}
+			}
+		}
+
+		return values;
+	}
 
 	// If user authenticated, grabs their profile data
 	onAuthStateChanged(auth, async (user) => {
@@ -34,9 +51,11 @@
 	let postContent;
 
 	const handleSubmit = () => {
+		let text = 'blah';
 		// Pass String/rating/postCount into our algorithm
-		// const hello = getPostRating(postContent);
-		// console.log(hello);
+		fetch(`/api/data?text=${text}`)
+			.then((res) => res.json())
+			.then((toxicityValues) => console.log(toxicityValue));
 
 		// Retrieve new rating from algo and set it as user's rating
 
@@ -45,7 +64,9 @@
 		feedPosts = [postContent].concat(feedPosts);
 
 		postContent = '';
+
 	};
+
 </script>
 
 <main class="bg-bridge-bg ml-12 mb-20">
