@@ -305,7 +305,7 @@
 						</svg>
 						
 					</button>
-					<p class="text-sm font-medium pt-1">{commentCount}</p>
+					<p class="text-sm font-medium pt-1">2</p>
 				</div>
 
 

@@ -8,7 +8,11 @@
 	// import { getPostRating } from '../lib/algo';
 	let name, email, photoURL, rating, postCount;
 	let feedPosts = [];
-	let postRatings = [3.4, 4.2, 4.7];
+	let postRatings = [
+		{ rating: 3.4, avatar: 'avatar4.jpg', likeCount: 5, respectCount: 2, commentCount: 2 },
+		{ rating: 4.7, avatar: 'avatar3.jpg', likeCount: 430, respectCount: 321, commentCount: 94 },
+		{ rating: 4.2, avatar: 'avatar2.jpg', likeCount: 124, respectCount: 26, commentCount: 40 }
+	];
 
 	// If user authenticated, grabs their profile data
 	onAuthStateChanged(auth, async (user) => {
@@ -26,8 +30,6 @@
 			// No user is signed in.
 		}
 	});
-
-	
 
 	let postContent;
 
@@ -78,13 +80,25 @@
 	</p>
 
 	{#each feedPosts as text}
-		<FeedPost {rating} profilePic={photoURL} likeCount={0} respectCount={0} postContent={text} commentCount={0} />
+		<FeedPost
+			{rating}
+			profilePic={photoURL}
+			likeCount={0}
+			respectCount={0}
+			postContent={text}
+			commentCount={0}
+		/>
 	{/each}
 
 	{#each postRatings as otherUserRating}
 		{#if rating <= otherUserRating}
-			<FeedPost rating={otherUserRating} profilePic={'avatar2.jpg'} likeCount={5} respectCount={6} commentCount={12} />
-
+			<FeedPost
+				rating={otherUserRating.rating}
+				profilePic={otherUserRating.avatar}
+				likeCount={otherUserRating.likeCount}
+				respectCount={otherUserRating.respectCount}
+				commentCount={otherUserRating.commentCount}
+			/>
 		{/if}
 	{/each}
 
