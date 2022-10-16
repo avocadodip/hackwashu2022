@@ -4,7 +4,7 @@ const API_KEY = 'AIzaSyDe3TeiAvpR5WD0EmnuI6qx6PM2PrAcmCA';
 const DISCOVERY_URL =
   'https://commentanalyzer.googleapis.com/$discovery/rest?version=v1alpha1';
 
-  function findValues(object) {
+function findValues(object) {
   const values = [];
 
   for (const key in object) {
