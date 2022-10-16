@@ -128,8 +128,8 @@
 	}
 
 	.fadeInAnimate {
-		-webkit-animation-duration: 4s;
-		animation-duration: 4s;
+		-webkit-animation-duration: 3s;
+		animation-duration: 3s;
 		-webkit-animation-fill-mode: both;
 		animation-fill-mode: both;
 	}
@@ -140,14 +140,14 @@
 		animation-delay: 0.5s;
 	}
 	.fadeInDelay {
-		-webkit-animation-delay: 1.1s;
-		-moz-animation-delay: 1.1s;
-		animation-delay: 1.1s;
+		-webkit-animation-delay: 0.5s;
+		-moz-animation-delay: 0.5s;
+		animation-delay: 0.5s;
 	}
 	.fadeInDelayTwo {
-		-webkit-animation-delay: 1.8s;
-		-moz-animation-delay: 1.8s;
-		animation-delay: 1.8s;
+		-webkit-animation-delay: 1s;
+		-moz-animation-delay: 1s;
+		animation-delay: 1s;
 	}
 
 	@-webkit-keyframes fadeInUp {

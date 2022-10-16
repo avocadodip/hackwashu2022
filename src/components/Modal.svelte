@@ -4,7 +4,7 @@
 </script>
 
 {#if showModal}
-  <div class="backdrop flex justify-center items-center" on:click|self>
+  <div class="backdrop flex justify-center items-center z-50" on:click|self>
     <div class="modal p-4">
       <div class="circle-bg cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black" on:click fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
