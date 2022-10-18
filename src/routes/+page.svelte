@@ -52,7 +52,7 @@
 
 	const handleSubmit = () => {
 		// Pass String/rating/postCount into our algorithm
-		fetch(`/data?text=${postContent}`)
+		fetch(`/data/api?text=${postContent}`)
 			.then((res) => res.json())
 			.then((toxicityValues) => console.log(toxicityValues));
 
